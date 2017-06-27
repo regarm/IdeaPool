@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<title>IdeaPooool | Projects</title>
+		<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="im3so0CnGVr9ZP+ybDZtXDHs/j79els9lN9+m7rPjTb9ZLj3zvYdnjI+TLFVRVvjFhV7eSyxFgVpvFoYejCVoQ==" />
+    <link rel="stylesheet" media="all" href="../../assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="reload" />
+    <script src="../../assets/application-e85ab9380fc348ab7b548d7bab447d36874ae5d3ff2f7f3c8d52e6e1ea4773d5.js" data-turbolinks-track="reload"></script>
+		
+		<link rel="stylesheet" media="screen" href="../../stylesheets/highlight.js/default.css" />
+		<link rel="stylesheet" media="screen" href="../../stylesheets/flatly/bootstrap.min.css" />
+		<link rel="stylesheet" media="screen" href="../../stylesheets/extra.css" />
+		<script>hljs.initHighlightingOnLoad();</script>
+		<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     tex2jax: {
+       inlineMath: [ ['$','$'] ],
+       processEscapes: true
+     }
+    });
+		</script>
+		<script src="../../mathjax/MathJax.js?config=TeX-AMS_HTML-full.js" type="text/javascript"></script>
+
+	</head>
+
+  <body style="padding-top:80px;">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="../../index.html">IdeaPool</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="navbar-main">
+					<ul class="nav navbar-nav">
+						<li class=active><a href="../show">Projects</a>
+						<li ><a href="../archive">Archive</a>
+						<li ><a href="../../sources/index">Sources</a>
+						<li ><a href="../../home/about">About</a>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="../../users/login">Login</a>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+			<div class="row">
+			</div>
+			<div class="row">
+				<div class="well">
+<div class="projecttitle"><h1>Sample Project Title</h1></div>
+<br>
+	<p>This project is a sample project. You description usually goes here. Points you should keep in mind -</p>
+
+<ul>
+<li>Markdown and MathJax are supported here</li>
+<li>Try to explain your project without much jargon</li>
+<li>List the languages and/or technologies used (tagging system in progress)</li>
+<li>Mention if you want the project to be closed source or open source. For open source repositories, we would be pleased to host them at <a href="https://172.16.86.222:9998/projects/show/github.com/BITMesraDevelopers">Github</a>
+</li>
+<li>Provide your contact info (like phone number for closed source projects or facebook url)</li>
+<li>An optimization equation that you want input on could be
+$$ 1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
+\prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+ \quad\quad \text{for $|q|&lt;1$}. $$</li>
+<li>Please feel free to ping any admin for any other information.
+All the best!!</li>
+</ul>
+<br><br>
+	Time Needed => {1 months|1 yr|...}
+	<br>
+	Status => {started|early|mature|....}
+	<br>
+	Owner => dzj
+<br><br><br>
+<div class="projectfeatures">
+
+	
+
+	
+	
+<div style="text-align:right;">
+Likes <span id="likes-8" class="badge">1</span>
+Comments <span class="badge">1</span>	
+</div>
+</div>
+
+</div>
+<br><br><br><h1>Comments</h1>
+<br>
+<div class="commentdefault panel panel-default">
+	<div class="panel-heading">
+	dzj
+	
+	<span style="float:right;background:#bbb;" class="badge">Project Owner</span>
+	</div>
+	<div class="panel-body">
+	<h1>Nitro</h1>
+
+<p>Quick and easy performance analyzer library for <a href="http://golang.org/">Go</a>.</p>
+
+<h2>Overview</h2>
+
+<p>Nitro is a quick and easy performance analyzer library for Go.<br>
+It is useful for comparing A/B against different drafts of functions<br>
+or different functions.</p>
+
+<h2>Implementing Nitro</h2>
+
+<p>Using Nitro is simple. First, use <code>go get</code> to install the latest version<br>
+of the library.</p>
+<div class="CodeRay">
+  <div class="code"><pre>$ go get github.com/spf13/nitro
+</pre></div>
+</div>
+
+<p>Next, include nitro in your application.</p>
+<br><br>
+	<a href="../../system/attachments/files/000/000/004/original/sample_file.txt?1473862713">sample_file.txt</a><br>
+	<br>
+	</div>
+</div>
+
+<br>
+
+<script>			
+	$("#upload-attachment").click(function() {
+		var formData = new FormData();
+		formData.append('file', $('#attachment_file')[0].files[0]);
+		formData.append('comment_id', "9");
+		$.ajax({
+			type: 'POST',
+			url: '/attachments/upload',
+			data: formData,
+			async: false,
+			cache: false,
+			contentType: false,
+			processData: false,
+			success: function(data, status, jqxhr) {
+				var messageDiv = document.getElementById('message');
+				var resp = JSON.parse(JSON.stringify(data));
+				if (resp["success"]) {
+					var newDiv = document.createElement('div');
+					newDiv.id = "attachment-"+resp["id"];
+					newDiv.dataset.id = resp["id"];
+					messageDiv.appendChild(newDiv);
+					var newDivUrl = document.createElement('a');
+					newDivUrl.href = resp["url"];
+					newDivUrl.text = resp["name"];
+					newDivUrl.target = "_blank";
+					newDiv.appendChild(newDivUrl);
+					newDiv.appendChild(document.createTextNode(" => "));
+					var newDivBtn = document.createElement('a');
+					newDivBtn.style.cursor = "pointer";
+					newDivBtn.className = "buttondefault";
+					newDivBtn.text = "delete";
+					newDivBtn.dataset.disableWith = "delete";
+					newDivBtn.onclick = function() {
+						$.ajax({
+							type: 'POST',
+							url: '/attachments/delete',
+							data: 'attachmentid='+this.parentNode.dataset.id.toString(),
+							async: false,
+							success: function(data, status, jqxhr) {
+								var resp_del = JSON.parse(JSON.stringify(data));
+								if (resp_del["success"]) {
+									$("#attachment-"+resp_del["id"]).remove();
+									var divHidden = document.getElementById('attachments_for_comment');
+									var divHiddenValue = JSON.parse(divHidden.value);
+									var i = divHiddenValue.indexOf(parseInt(resp_del["id"]));
+									if (i > 0) {
+										divHiddenValue.splice(i, 1);
+									}
+									divHidden.value = JSON.stringify(divHiddenValue);
+								}
+							}
+						});
+					}
+					newDiv.appendChild(newDivBtn);
+					var divHidden = document.getElementById('attachments_for_comment');
+					var divHiddenValue = JSON.parse(divHidden.value);
+					divHiddenValue.push(resp["id"]);
+					divHidden.value = JSON.stringify(divHiddenValue);
+				}
+			}
+		});
+	});
+	$(".buttonlike").click(function() {
+		$.ajax({
+			method: "GET",
+			url: "/likes/toggle/"+this.dataset.id.toString(),
+			async: false,
+			success: function(data, status, jqxhr) {
+				var resp = JSON.parse(JSON.stringify(data));
+				if (resp["success"]) {
+					$("#like-"+resp["id"]).html(resp["newtext"]);
+					$("#likes-"+resp["id"]).html(resp["newlikes"]);
+				}
+			}
+		});
+	});
+	$(".buttonvolunteer").click(function() {
+		$.ajax({
+			method: "GET",
+			url: "/volunteers/toggle/"+this.dataset.id.toString(),
+			async: false,
+			success: function(data, status, jqxhr) {
+				var resp = JSON.parse(JSON.stringify(data));
+				if (resp["success"]) {
+					$("#volunteer-"+resp["id"]).html(resp["newtext"]);
+				}
+			}
+		});
+	});	
+</script>
+
+			</div>
+		</div>
+		
+		
+		<footer style="margin:3%;">
+			<div class="container">
+				<div class="row">
+					<center>&copy DC Admins (BIT Mesra)</center>
+				</div>
+			</div>
+		</footer>
+  </body>
+	
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<title>IdeaPooool | Projects</title>
+		<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="ayRlJzpcadRZ4hEp0pfCsNnCK689snkDYwReDJekDSMcLTFztA1tEJa4oirr5PQP/juu6Ox5NDueZ3qPV1sVtA==" />
+    <link rel="stylesheet" media="all" href="../../assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="reload" />
+    <script src="../../assets/application-e85ab9380fc348ab7b548d7bab447d36874ae5d3ff2f7f3c8d52e6e1ea4773d5.js" data-turbolinks-track="reload"></script>
+		
+		<link rel="stylesheet" media="screen" href="../../stylesheets/highlight.js/default.css" />
+		<link rel="stylesheet" media="screen" href="../../stylesheets/flatly/bootstrap.min.css" />
+		<link rel="stylesheet" media="screen" href="../../stylesheets/extra.css" />
+		<script>hljs.initHighlightingOnLoad();</script>
+		<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     tex2jax: {
+       inlineMath: [ ['$','$'] ],
+       processEscapes: true
+     }
+    });
+		</script>
+		<script src="../../mathjax/MathJax.js?config=TeX-AMS_HTML-full.js" type="text/javascript"></script>
+
+	</head>
+
+  <body style="padding-top:80px;">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="../../index.html">IdeaPool</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="navbar-main">
+					<ul class="nav navbar-nav">
+						<li class=active><a href="../show">Projects</a>
+						<li ><a href="../archive">Archive</a>
+						<li ><a href="../../sources/index">Sources</a>
+						<li ><a href="../../home/about">About</a>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="../../users/login">Login</a>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+			<div class="row">
+			</div>
+			<div class="row">
+				<div class="well">
+<div class="projecttitle"><h1>IdeaPool</h1></div>
+<br>
+	<p>This is the project that maintains this very website. The idea is simple: people propose projects, projects get approved by an admin, they show up on the projects page, and people can volunteer for it. Volunteers can be converted to members (proposers are by default members), and admins can create a repository hosted on Github (for now) for the project.</p>
+<br><br>
+	Time Needed => 2-3 months
+	<br>
+	Status => early
+	<br>
+	Owner => arch6
+<br><br><br>
+<div class="projectfeatures">
+
+	
+
+<a href="http://github.com/bitlug/ideapool" target="_blank" class="btn btn-info">
+	View on Github
+</a>
+<a href="https://172.16.86.222:9998/github/view?name=ideapool" class="btn btn-info">
+	View Source
+</a>
+	
+	
+<div style="text-align:right;">
+Likes <span id="likes-3" class="badge">3</span>
+Comments <span class="badge">0</span>	
+</div>
+</div>
+
+</div>
+
+<br>
+
+<script>			
+	$("#upload-attachment").click(function() {
+		var formData = new FormData();
+		formData.append('file', $('#attachment_file')[0].files[0]);
+		formData.append('comment_id', "9");
+		$.ajax({
+			type: 'POST',
+			url: '/attachments/upload',
+			data: formData,
+			async: false,
+			cache: false,
+			contentType: false,
+			processData: false,
+			success: function(data, status, jqxhr) {
+				var messageDiv = document.getElementById('message');
+				var resp = JSON.parse(JSON.stringify(data));
+				if (resp["success"]) {
+					var newDiv = document.createElement('div');
+					newDiv.id = "attachment-"+resp["id"];
+					newDiv.dataset.id = resp["id"];
+					messageDiv.appendChild(newDiv);
+					var newDivUrl = document.createElement('a');
+					newDivUrl.href = resp["url"];
+					newDivUrl.text = resp["name"];
+					newDivUrl.target = "_blank";
+					newDiv.appendChild(newDivUrl);
+					newDiv.appendChild(document.createTextNode(" => "));
+					var newDivBtn = document.createElement('a');
+					newDivBtn.style.cursor = "pointer";
+					newDivBtn.className = "buttondefault";
+					newDivBtn.text = "delete";
+					newDivBtn.dataset.disableWith = "delete";
+					newDivBtn.onclick = function() {
+						$.ajax({
+							type: 'POST',
+							url: '/attachments/delete',
+							data: 'attachmentid='+this.parentNode.dataset.id.toString(),
+							async: false,
+							success: function(data, status, jqxhr) {
+								var resp_del = JSON.parse(JSON.stringify(data));
+								if (resp_del["success"]) {
+									$("#attachment-"+resp_del["id"]).remove();
+									var divHidden = document.getElementById('attachments_for_comment');
+									var divHiddenValue = JSON.parse(divHidden.value);
+									var i = divHiddenValue.indexOf(parseInt(resp_del["id"]));
+									if (i > 0) {
+										divHiddenValue.splice(i, 1);
+									}
+									divHidden.value = JSON.stringify(divHiddenValue);
+								}
+							}
+						});
+					}
+					newDiv.appendChild(newDivBtn);
+					var divHidden = document.getElementById('attachments_for_comment');
+					var divHiddenValue = JSON.parse(divHidden.value);
+					divHiddenValue.push(resp["id"]);
+					divHidden.value = JSON.stringify(divHiddenValue);
+				}
+			}
+		});
+	});
+	$(".buttonlike").click(function() {
+		$.ajax({
+			method: "GET",
+			url: "/likes/toggle/"+this.dataset.id.toString(),
+			async: false,
+			success: function(data, status, jqxhr) {
+				var resp = JSON.parse(JSON.stringify(data));
+				if (resp["success"]) {
+					$("#like-"+resp["id"]).html(resp["newtext"]);
+					$("#likes-"+resp["id"]).html(resp["newlikes"]);
+				}
+			}
+		});
+	});
+	$(".buttonvolunteer").click(function() {
+		$.ajax({
+			method: "GET",
+			url: "/volunteers/toggle/"+this.dataset.id.toString(),
+			async: false,
+			success: function(data, status, jqxhr) {
+				var resp = JSON.parse(JSON.stringify(data));
+				if (resp["success"]) {
+					$("#volunteer-"+resp["id"]).html(resp["newtext"]);
+				}
+			}
+		});
+	});	
+</script>
+
+			</div>
+		</div>
+		
+		
+		<footer style="margin:3%;">
+			<div class="container">
+				<div class="row">
+					<center>&copy DC Admins (BIT Mesra)</center>
+				</div>
+			</div>
+		</footer>
+  </body>
+	
+</html>

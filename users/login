@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<title>IdeaPooool</title>
+		<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="NwkTZHTTyR8fqFDGClRyfghZ4cApX2ZjqeZige8Aqt1AAEcw+oLN29Dy48UzJ0TBL6Bkh/iUK1tUhUYCL/+ySg==" />
+    <link rel="stylesheet" media="all" href="../assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="reload" />
+    <script src="../assets/application-e85ab9380fc348ab7b548d7bab447d36874ae5d3ff2f7f3c8d52e6e1ea4773d5.js" data-turbolinks-track="reload"></script>
+		
+		<link rel="stylesheet" media="screen" href="../stylesheets/highlight.js/default.css" />
+		<link rel="stylesheet" media="screen" href="../stylesheets/flatly/bootstrap.min.css" />
+		<link rel="stylesheet" media="screen" href="../stylesheets/extra.css" />
+		<script>hljs.initHighlightingOnLoad();</script>
+		<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     tex2jax: {
+       inlineMath: [ ['$','$'] ],
+       processEscapes: true
+     }
+    });
+		</script>
+		<script src="../mathjax/MathJax.js?config=TeX-AMS_HTML-full.js" type="text/javascript"></script>
+
+	</head>
+
+  <body style="padding-top:80px;">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="../index.html">IdeaPool</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="navbar-main">
+					<ul class="nav navbar-nav">
+						<li ><a href="../projects/show">Projects</a>
+						<li ><a href="../projects/archive">Archive</a>
+						<li ><a href="../sources/index">Sources</a>
+						<li ><a href="../home/about">About</a>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="login">Login</a>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+			<div class="row">
+			</div>
+			<div class="row">
+				<div class="jumbotron">
+	<form class="formdefault form-horizontal" id="new_user" action="https://172.16.86.222:9998/users/makesession" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="2L+KJ+zBMIU9NFqX4kAyuy+XiOmJmKB4tOt/Nj6VS9Gvtt5zYpA0QfJu6ZTbMwQECG4NrlhT7UBJiFu1/mpTRg==" />
+		<fieldset>
+		<legend>Login using your DC website credentials</legend>
+		<div class="form-group">
+			<label class="col-lg-1 control-label">Username</label>
+			<div class="col-lg-11">
+				<div class="col-lg-2">
+					<input class="form-control col-lg-2" type="text" name="user[username]" id="user_username" />
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-1 control-label">Password</label>
+			<div class="col-lg-11">
+				<div class="col-lg-2">
+					<input class="form-control col-lg-2" type="password" name="user[password]" id="user_password" />
+				</div>
+			</div>
+		</div>
+		<input type="submit" name="commit" value="Log in" class="buttondefault btn btn-primary" data-disable-with="Log in" />
+		</fieldset>
+</form>	<br><br>
+	<p>If you haven't, please <a href="http://172.16.86.222/dchub/register" target="_blank">register on DC website</a> first.</p>
+</div>
+
+			</div>
+		</div>
+		
+		
+		<footer style="margin:3%;">
+			<div class="container">
+				<div class="row">
+					<center>&copy DC Admins (BIT Mesra)</center>
+				</div>
+			</div>
+		</footer>
+  </body>
+	
+</html>
