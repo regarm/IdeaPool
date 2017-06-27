@@ -39,7 +39,7 @@
 				<div class="collapse navbar-collapse" id="navbar-main">
 					<ul class="nav navbar-nav">
 						<li ><a href="../projects/show">Projects</a>
-						<li ><a href="../projects/archive">Archive</a>
+						<li ><a href="../projects/archive.html">Archive</a>
 						<li ><a href="../sources/index">Sources</a>
 						<li ><a href="../home/about">About</a>
 					</ul>
